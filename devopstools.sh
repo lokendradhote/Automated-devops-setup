@@ -36,7 +36,8 @@ sudo usermod -aG docker ${SUDO_USER:-$USER}
 # --- TERRAFORM INSTALLATION ---
 echo "--- Installing Terraform ---"
 
-# FIXED GPG KEY INSTALLATION
+sudo install -m 0755 -d /usr/share/keyrings
+
 curl -fsSL https://apt.releases.hashicorp.com/gpg | \
 sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 
@@ -44,7 +45,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashi
 sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
 
 sudo apt update -y
-sudo apt install terraform -y
+sudo apt install -y terraform
 
 # --- TRIVY INSTALLATION ---
 echo "--- Installing Trivy ---"
