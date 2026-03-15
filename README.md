@@ -1,47 +1,58 @@
-# 🛠️ Automated DevOps Tools Setup
+🛠️ Automated DevOps Tools Setup
 
-A robust Bash script designed to automate the installation and configuration of a professional DevOps toolchain on Ubuntu systems. This is ideal for quickly provisioning **AWS EC2 instances** or setting up a fresh local **Ubuntu** environment for development.
+A Bash script that automates the installation and configuration of a complete DevOps toolchain on Ubuntu systems. This project is useful for quickly provisioning AWS EC2 instances or setting up a fresh Ubuntu environment for development.
 
-## 🚀 Tools Included
-This script automates the setup of the following industry-standard tools:
-* **Docker Engine & Docker Compose**: For containerization and orchestration.
-* **Terraform**: Infrastructure as Code (IaC) to manage cloud resources.
-* **Jenkins**: CI/CD automation server (configured with OpenJDK 21).
-* **Trivy**: Security scanner for detecting vulnerabilities in container images and files.
-* **Utilities**: Git, Curl, Wget, Unzip, and GnuPG.
+🚀 Tools Included
 
-## 📋 Prerequisites
-* **Operating System**: Ubuntu 22.04 LTS or newer.
-* **User Permissions**: Sudo/Root privileges are required to install packages.
-* **Environment**: Cloud (EC2/Azure/GCP) or local Linux environments.
+Docker Engine & Docker Compose – Containerization platform
+Terraform – Infrastructure as Code (IaC)
+Jenkins – CI/CD automation server (OpenJDK 21)
+Trivy – Vulnerability scanner
+Utilities – Git, Curl, Wget, Unzip, GnuPG
 
-## ⚙️ Installation & Usage
+📋 Prerequisites
 
-### 1. Clone the Repository
-```
-git clone https://github.com/lokendradhote/Automated-devops-setup
+Operating System: Ubuntu 22.04 LTS or newer
+Permissions: Sudo/root privileges required
+Environment: Cloud (AWS EC2 / Azure / GCP) or local Linux system
 
+⚙️ Installation & Usage
+
+1 Clone the repository
+
+```git clone https://github.com/lokendradhote/Automated-devops-setup
 cd Automated-devops-setup
 ```
-### 2. Grant permissions and Execute
+
+2 Grant permission and run the script
 ```
 chmod +x devopstools.sh
-./devopstools.sh
+sudo ./devopstools.sh
 ```
-### 3. Apply Post-Installation Changes
+3 Apply Docker group changes
 ```
 newgrp docker
 ```
-### 🛡️ Verification
-Once the script finishes, you can confirm the tools are correctly installed by checking their versions:
+
+🛡️ Verification
 ```
 docker --version
 terraform -version
 trivy --version
-jenkins --version
 java -version
 ```
+Check Jenkins status
+```
+systemctl status jenkins
+```
+Access Jenkins in browser:
 
-Author: Lokendra Dhote
-Portfolio: lokendradhote.vercel.app  
-Interests: DevOps, Cloud Computing, MERN Stack
+http://localhost:8080
+
+Get initial Jenkins admin password:
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+Author: Lokendra Dhote  
+Portfolio: lokendradhote.vercel.app  
+Interests: DevOps, Cloud Computing
