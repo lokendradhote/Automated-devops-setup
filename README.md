@@ -19,8 +19,9 @@ This script automates the setup of the following industry-standard tools:
 
 ### 1. Clone the Repository
 ```
-git clone [https://github.com/YOUR_GITHUB_USERNAME/automated-devops-tools-setup.git](https://github.com/YOUR_GITHUB_USERNAME/automated-devops-tools-setup.git)
-cd automated-devops-tools-setup
+git clone https://github.com/lokendradhote/Automated-devops-setup
+
+cd Automated-devops-setup
 ```
 ### 2. Grant permissions and Execute
 ```
