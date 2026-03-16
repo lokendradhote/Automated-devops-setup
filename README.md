@@ -20,7 +20,8 @@ Environment: Cloud (AWS EC2 / Azure / GCP) or local Linux system
 
 1 Clone the repository
 
-```git clone https://github.com/lokendradhote/Automated-devops-setup
+```
+git clone https://github.com/lokendradhote/Automated-devops-setup
 cd Automated-devops-setup
 ```
 
